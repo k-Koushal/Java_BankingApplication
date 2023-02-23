@@ -1,0 +1,24 @@
+body{
+    background-color:#ECF2FF!important;
+}
+#homeLogo{
+height:80px;
+width: 100px;
+
+}
+#title{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  
+}
+#login_mainDiv{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba(7, 8, 11, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+#login_card_div{
+    background-image: url(images/login_bg.jpg);
+}
