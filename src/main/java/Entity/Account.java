@@ -9,11 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
+@SequenceGenerator(name = "port_gen", sequenceName = "port_gen",  initialValue = 100000)
 public class Account {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY  , generator = "port_gen")
 	private Integer accountId;
 
 	private String userName;
@@ -114,7 +116,7 @@ public class Account {
 	
 //---------TO STRING----------
 
-	public Double getBalance() {
+	public  Double getBalance() {
 		return balance;
 	}
 

@@ -21,8 +21,10 @@ public class Main {
 	
 	 	ApplicationContext context = new ClassPathXmlApplicationContext("BankingApplication_beans.xml");
 		BankingDao dao = (BankingDaoImpl) context.getBean("BankingDaoImpl");
+		
 		Login login = new Login();
 		login.setPassword("12345");
+		
 
 		Account acc = new Account();
 		acc.setLogin(login);
@@ -37,16 +39,30 @@ public class Main {
 		Transactions tx = new Transactions();
 		tx.setAccount(acc);
 		tx.setDeposite(200d);
-
 		List<Transactions> txList = new ArrayList();
 		txList.add(tx);
 		acc.setTx(txList);
-
 		dao.saveAccount(acc);
 		dao.saveTransaction(tx);
-		dao.saveLogin(login);
-	 
-		System.out.println(tx);
+		
+		Transactions tx2=new Transactions();
+		tx2.setAccount(acc);
+		tx2.setWithdraw(160d);
+		
+		
+		List<Transactions> txList2 = acc.getTx();
+		txList2.add(tx2);
+		acc.setTx(txList2);
+		dao.UpdateAccount(acc);
+		dao.saveTransaction(tx2);
+		
+
+	
+		
+		
+		
+		
+		
 
 	}
 
