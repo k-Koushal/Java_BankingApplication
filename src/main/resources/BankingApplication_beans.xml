@@ -39,6 +39,7 @@
 			<list>
 				<value>Entity.Login</value>
 				<value>Entity.Account</value>
+				<value>Entity.Transactions</value>
 			</list>
 		</property>
 	</bean>

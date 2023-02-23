@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Login {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userID;
 	private String password;
 

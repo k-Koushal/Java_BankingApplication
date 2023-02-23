@@ -1,10 +1,13 @@
 package Entity;
 
+import java.util.List;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -19,9 +22,13 @@ public class Account {
 	private Address address;
 	private String email;
 	private String accountType;
-
+	private Double balance=0d;
+	
 	@OneToOne(mappedBy = "account")
 	private Login login;
+	
+	@OneToMany(mappedBy = "txAccount")
+	private List<Transactions> tx;
 
 //-------------C O N S T R U C T O R S---------
 	public Account() {
@@ -29,15 +36,24 @@ public class Account {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Account(String userName, String dob, Address address, String email, String accountType, Login login) {
-		super();
-		this.userName = userName;
-		this.dob = dob;
-		this.address = address;
-		this.email = email;
-		this.accountType = accountType;
-		this.login = login;
-	}
+	
+
+
+	public Account(String userName, String dob, Address address, String email, String accountType, Double balance,
+		Login login, List<Transactions> tx) {
+	super();
+	this.userName = userName;
+	this.dob = dob;
+	this.address = address;
+	this.email = email;
+	this.accountType = accountType;
+	this.balance = balance;
+	this.login = login;
+	this.tx = tx;
+}
+
+
+
 
 	// -------G E T T E R S & S E T T E R S----------
 	public Integer getAccountId() {
@@ -95,12 +111,37 @@ public class Account {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
+	
 //---------TO STRING----------
+
+	public Double getBalance() {
+		return balance;
+	}
+
+
+	public void setBalance(Double balance) {
+		this.balance = balance;
+	}
+
+
+	public List<Transactions> getTx() {
+		return tx;
+	}
+
+
+
+
+	public void setTx(List<Transactions> tx) {
+		this.tx = tx;
+	}
+
+
+
 
 	@Override
 	public String toString() {
-		return "Account [\naccountId=" + accountId + ", \nuserName=" + userName + ", \ndob=" + dob + ", \naddress=" + address
-				+ ", \nemail=" + email + ", \naccountType=" + accountType + "\n]";
+		return "Account :\naccountId=" + accountId + ", \nuserName=" + userName + ", \ndob=" + dob + ", \naddress=" + address
+				+ ", \nemail=" + email + ", \naccountType=" + accountType + "\nBalance="+balance+", \nNumber of Transactions ="+tx.size();
 	}
 	
 }
