@@ -20,7 +20,7 @@ public class Transactions {
 
 	private Double deposite;
 	private Double withdraw;
-	private String date=getDate();
+	private String date=thisDate();
 
 	
 	@ManyToOne
@@ -46,6 +46,14 @@ public class Transactions {
 
 	public Integer getTransactionId() {
 		return transactionId;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public Double getBalance() {
@@ -113,7 +121,7 @@ public class Transactions {
 		}
 	}
 	
-	private String getDate() {
+	private String thisDate() {
 		Locale locale = new Locale("en", "IN");
 		DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.DEFAULT, locale);
 		String date = dateFormat.format(new Date());

@@ -39,12 +39,12 @@ if(acc==null){
               <button type="submit" class="btn btn-outline-primary fs-5" type="button">Make Transactions</button>
           </div>
           </form>
-          <form action="" method="post" >
+          <form action="statement.jsp" method="post" >
             <div class="d-grid gap-4 py-4 col-6  mx-auto">
               <button type="submit" class="btn btn-outline-success fs-5" type="button">See Statement</button>
           </div>
           </form>
-          <form action="" method="post" >
+          <form action="logout.jsp" method="post" >
             <div class="d-grid gap-4 py-4 col-6   mx-auto">
               <button type="submit" class="btn btn-outline-secondary fs-5" type="button">Exit</button>
           </div>

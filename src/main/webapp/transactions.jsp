@@ -50,11 +50,16 @@ if (acc == null) {
 						<option value="withdraw">Withdraw</option>
 					</select>
 					<div class="d-flex justify-content-center mb-4">
+					
 					<button type="submit" class="btn btn-primary w-25  ">Proceed</button>
 					</div>
 					
 				</form>
-
+					<form action="optionsPage.jsp" method="post" >
+            <div class="d-grid gap-4 py-4 col-6   mx-auto">
+              <button type="submit" class="btn btn-outline-secondary fs-5" type="button">Go back</button>
+          </div>
+          </form>
 
 
 			</div>
