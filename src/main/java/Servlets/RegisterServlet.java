@@ -50,7 +50,6 @@ public class RegisterServlet extends HttpServlet {
 		HttpSession session=request.getSession();
 		session.setAttribute("message", "Account Successfully Registered | your userID is: " +accID);
 			
-			response.setContentType("text/html;charset=UTF-8l");
 			response.sendRedirect("register.jsp");
 			
 			

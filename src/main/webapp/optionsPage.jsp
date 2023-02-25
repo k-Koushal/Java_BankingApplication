@@ -34,19 +34,19 @@ if(acc==null){
           <p class="text-center h1  display-5 ">Welcome <%=acc.getUserName() %></p>
         </div>
         <div id="loginPageCard" class="col-9 justify-content-md-center mt-4  mb-5 py-5 ">
-          <form action="" method="post" class="">
+          <form action="transactions.jsp" method="post" >
             <div class="d-grid gap-4 py-4 col-6  mx-auto">
-              <button type="sumbit" class="btn btn-outline-primary fs-5" type="button">Make Transactions</button>
+              <button type="submit" class="btn btn-outline-primary fs-5" type="button">Make Transactions</button>
           </div>
           </form>
-          <form action="" method="post" class="">
+          <form action="" method="post" >
             <div class="d-grid gap-4 py-4 col-6  mx-auto">
-              <button type="sumbit" class="btn btn-outline-success fs-5" type="button">See Statement</button>
+              <button type="submit" class="btn btn-outline-success fs-5" type="button">See Statement</button>
           </div>
           </form>
-          <form action="" method="post" class="">
+          <form action="" method="post" >
             <div class="d-grid gap-4 py-4 col-6   mx-auto">
-              <button type="sumbit" class="btn btn-outline-secondary fs-5" type="button">Exit</button>
+              <button type="submit" class="btn btn-outline-secondary fs-5" type="button">Exit</button>
           </div>
           </form>
         

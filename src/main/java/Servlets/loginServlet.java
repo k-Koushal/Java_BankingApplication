@@ -39,11 +39,12 @@ public class loginServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("account", acc);
+		session.setAttribute("accId",acc.getAccountId());
+		session.setAttribute("password",acc.getPassword());
 		
 		if (acc != null) {
 			response.sendRedirect("optionsPage.jsp");
 		}
-
 		else {
 			session.setAttribute("loginMessage", "Login failed! Please enter correct credentials");
 			response.sendRedirect("login.jsp");

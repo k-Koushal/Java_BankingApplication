@@ -13,5 +13,4 @@ public interface BankingDao {
 	Account fetchAccountWithIDandPassword(Integer accId,String password);
 	Integer saveTransactionList(List<Transactions> txList);
 	Integer saveTransaction(Transactions tx);
-	
 }

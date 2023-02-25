@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>Servlets.loginServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>transaction</servlet-name>
+  	<display-name>transaction</display-name>
+  	<description></description>
+  	<servlet-class>Servlets.transaction</servlet-class>
+  </servlet>
 
   <servlet-mapping>
   	<servlet-name>RegisterServlet</servlet-name>
@@ -24,6 +30,10 @@
   <servlet-mapping>
   	<servlet-name>loginServlet</servlet-name>
   	<url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>transaction</servlet-name>
+  	<url-pattern>/transaction</url-pattern>
   </servlet-mapping>
 
   

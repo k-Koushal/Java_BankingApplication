@@ -34,16 +34,22 @@ public class Transactions {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Transactions(Double deposite, Double withdraw, Account account) {
+	public Transactions(Account account) {
 		super();
-		this.deposite = deposite;
-		this.withdraw = withdraw;
 		this.txAccount = account;
+		
 	}
+	
+	
 	// ------GENNETS & SETTERS---
+	
 
 	public Integer getTransactionId() {
 		return transactionId;
+	}
+
+	public Double getBalance() {
+		return balance;
 	}
 
 	public void setTransactionId(Integer transactionId) {
