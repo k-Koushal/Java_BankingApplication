@@ -1,3 +1,17 @@
+
+<%@page import="Entity.Account"%>
+<%
+	
+Account acc=(Account)session.getAttribute("account");
+if(acc==null){
+	
+	session.setAttribute("loginMessage","Access not permitted! Please Login  to proceed further");
+	response.sendRedirect("login.jsp");
+	return;
+}
+%>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +31,7 @@
       <div class="row  justify-content-center ">
         <div class="col-9   mt-3 pt-5 
         ">
-          <p class="text-center h1  display-5 ">Welcome User</p>
+          <p class="text-center h1  display-5 ">Welcome <%=acc.getUserName() %></p>
         </div>
         <div id="loginPageCard" class="col-9 justify-content-md-center mt-4  mb-5 py-5 ">
           <form action="" method="post" class="">
