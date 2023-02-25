@@ -4,44 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="Stylesheet" href="css/style.css" />
+	<!-- Style -->
+	<%@include file="style.jsp" %>
+	<!-- /Style -->
 
     <title>Home-MyBank</title>
   </head>
-  <body>
+  <body >
     <!--NavBar-->
-    <div class="containerifluid">
-      <nav class="navbar navbar-expand-lg bg-primary bg-gradient">
-        <div class="container">
-          <a
-            id="title"
-            class="navbar-brand fs-4 fw-bolder text-light"
-            href="index.html"
-            >My Bank</a
-          >
-        </div>
-      </nav>
-    </div>
+    <%@include file="navbar.jsp" %>
     <!--End of NavBar-->
-    <div id="login_card_div" class="container text-center m-5">
-        <div id="login_mainDiv" class="row align-items-center">
-          <div  class="col">
-            One of three columns
-          </div>
-          
+    <div class="container position-absolute top-30">
+      <!-- Error Statement-->
+    </div>
+    <div class="container  border-5 w-50 my-5 bg-primary bg-opacity-25 bg-gradient">
+      <div class="row  justify-content-center ">
+        <div class="col-9   mt-3 pt-5 
+        ">
+          <p class="text-center h1  display-5 ">Welcome To MyBank</p>
+          <%@include file="loginMessage.jsp" %>
         </div>
+        
+        <div id="loginBox" class="col-9 justify-content-md-center mt-4  mb-5 py-5 px-5 ">
+            <form action="loginServlet" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">User ID</label>
+                  <input type="number" class="form-control" name="userID">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="userPassword">
+                </div>
+               <div class="w-100 position-relative   d-flex">
+               <button type="submit" class="btn btn-primary mx-auto position-relative fw-semibold fs-6">Login</button>
+               </div>
+              </form>
+        
+        </div>
+
       </div>
-    <!--BootStrap-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
+    </div>
+    
+    <!-- Footer -->
+   <%@include file="footer.jsp" %>
+   
   </body>
 </html>

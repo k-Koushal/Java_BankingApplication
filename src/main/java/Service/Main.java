@@ -12,7 +12,7 @@ import Dao.BankingDao;
 import Dao.BankingDaoImpl;
 import Entity.Account;
 import Entity.Address;
-import Entity.Login;
+
 import Entity.Transactions;
 
 public class Main {
@@ -22,7 +22,11 @@ public class Main {
 	 	ApplicationContext context = new ClassPathXmlApplicationContext("BankingApplication_beans.xml");
 		BankingDao dao = (BankingDaoImpl) context.getBean("BankingDaoImpl");
 		
-		Login login = new Login();
+		
+	System.out.println(dao.fetchAccountWithIDandPassword(100000,"password"));
+	System.out.println(dao.fetchAccount(100000).getPassword());
+	/*
+	 	Login login = new Login();
 		login.setPassword("12345");
 		
 
@@ -55,8 +59,10 @@ public class Main {
 		acc.setTx(txList2);
 		dao.UpdateAccount(acc);
 		dao.saveTransaction(tx2);
+		dao.saveLogin(login);
 		
 
+	 */
 	
 		
 		

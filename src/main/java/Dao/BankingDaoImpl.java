@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 
 import Entity.Account;
-import Entity.Login;
+
 import Entity.Transactions;
 
 public class BankingDaoImpl implements BankingDao {
@@ -20,20 +20,8 @@ public class BankingDaoImpl implements BankingDao {
 	}
 
 	@Transactional
-	public Integer saveLogin(Login login) {
-		try {
-			Integer n = (Integer) this.ht.save(login);
-			return n;
-
-		} catch (Exception e) {
-			System.out.println("Error Couldn't perform the Operation| " + e);
-			return null;
-		}
-
-	}
-
-	@Transactional
 	public Integer saveAccount(Account account) {
+
 		try {
 			Integer n = (Integer) this.ht.save(account);
 			return n;
@@ -93,6 +81,22 @@ public class BankingDaoImpl implements BankingDao {
 			return null;
 		}
 
+	}
+
+	public Account fetchAccountWithIDandPassword(Integer accId, String password) {
+		Account acc = fetchAccount(accId);
+		
+		if (acc == null) {
+			return null;
+		}
+			
+		else if (acc.getPassword().equals(password)) {
+			return acc;
+		}
+		else {
+			return null;
+		}
+			
 	}
 
 }

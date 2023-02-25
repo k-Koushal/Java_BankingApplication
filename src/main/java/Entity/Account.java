@@ -2,13 +2,12 @@ package Entity;
 
 import java.util.List;
 
-import javax.persistence.Embedded;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
@@ -20,14 +19,11 @@ public class Account {
 
 	private String userName;
 	private String dob;
-	@Embedded
-	private Address address;
+	private String address;
 	private String email;
 	private String accountType;
 	private Double balance=0d;
-	
-	@OneToOne(mappedBy = "account")
-	private Login login;
+	private String password;
 	
 	@OneToMany(mappedBy = "txAccount")
 	private List<Transactions> tx;
@@ -38,29 +34,41 @@ public class Account {
 		// TODO Auto-generated constructor stub
 	}
 
-	
 
-
-	public Account(String userName, String dob, Address address, String email, String accountType, Double balance,
-		Login login, List<Transactions> tx) {
+	public Account(String userName, String dob, String address, String email,String password, String accountType) {
 	super();
 	this.userName = userName;
 	this.dob = dob;
 	this.address = address;
 	this.email = email;
 	this.accountType = accountType;
-	this.balance = balance;
-	this.login = login;
-	this.tx = tx;
+	this.password = password;
 }
 
 
 
 
+
+
 	// -------G E T T E R S & S E T T E R S----------
+	
 	public Integer getAccountId() {
 		return accountId;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+
+
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
+
 
 	public void setAccountId(Integer accountId) {
 		this.accountId = accountId;
@@ -82,11 +90,11 @@ public class Account {
 		this.dob = dob;
 	}
 
-	public Address getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 
@@ -106,13 +114,9 @@ public class Account {
 		this.accountType = accountType;
 	}
 
-	public Login getLogin() {
-		return login;
-	}
 
-	public void setLogin(Login login) {
-		this.login = login;
-	}
+
+
 	
 //---------TO STRING----------
 
