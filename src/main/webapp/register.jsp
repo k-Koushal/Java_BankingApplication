@@ -88,7 +88,7 @@
 						</div>
 					</div>
 
-					<div class="col ps-5 mt-5  ">
+					<div class="col  mt-5  ">
 						<button type="submit" class="btn  mx-5 me-2 btn-primary">Submit</button>
 						<button type="reset" class="btn ms-2 me-2 btn-success">&nbsp;
 							Reset &nbsp;</button>

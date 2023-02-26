@@ -38,11 +38,12 @@ public class loginServlet extends HttpServlet {
 		Account acc = (Account) dao.fetchAccountWithIDandPassword(accountId, password);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute("account", acc);
-		session.setAttribute("accId",acc.getAccountId());
-		session.setAttribute("password",acc.getPassword());
+
 		
 		if (acc != null) {
+			session.setAttribute("account", acc);
+			session.setAttribute("accId",acc.getAccountId());
+			session.setAttribute("password",acc.getPassword());
 			response.sendRedirect("optionsPage.jsp");
 		}
 		else {
